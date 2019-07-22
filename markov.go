@@ -26,6 +26,7 @@ func CreateEmptyTable() TransitionTable {
 // into the markov chain or if the transition already exists, increases it's weight
 func AddTransition(table *TransitionTable, from State, to State) {
 	// TODO change this to only store ratio, no need to store duplicates
+	// TODO make thread safe
 	(*table)[from] = append((*table)[from], to)
 }
 
